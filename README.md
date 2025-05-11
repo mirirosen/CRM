@@ -1,78 +1,92 @@
 # CRM System
 
-A modern CRM system built with Next.js, TypeScript, and Prisma.
+A modern Customer Relationship Management (CRM) system built with Next.js, TypeScript, and Prisma.
 
 ## Features
 
-- Lead management with status tracking
-- Lead to contact conversion
-- Contact management
-- Conversation history
-- Real-time chat interface
+- **Leads Management**
+  - Track potential customers
+  - Convert leads to contacts
+  - Status tracking and updates
+
+- **Contacts Management**
+  - Store and manage customer information
+  - View contact history
+  - Track interactions
+
+- **Conversations**
+  - View all customer conversations
+  - Track communication history
+  - Manage customer interactions
 
 ## Tech Stack
 
-- Next.js 14 (App Router)
-- TypeScript
-- Prisma (PostgreSQL)
-- Tailwind CSS
+- **Frontend**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS
+- **Database**: PostgreSQL with Prisma ORM
+- **Language**: TypeScript
 
 ## Getting Started
 
-1. Clone the repository
+### Prerequisites
+
+- Node.js 18+ 
+- PostgreSQL
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mirirosen/CRM.git
+   cd CRM
+   ```
+
 2. Install dependencies:
    ```bash
    npm install
+   # or
+   yarn install
    ```
 
-3. Set up your database:
-   - Create a PostgreSQL database
-   - Copy `.env.example` to `.env` and update the `DATABASE_URL`
+3. Set up your environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+   Update the `.env` file with your database credentials.
 
-4. Run database migrations:
+4. Set up the database:
    ```bash
    npx prisma migrate dev
    ```
 
-5. Start the development server:
+5. Run the development server:
    ```bash
    npm run dev
+   # or
+   yarn dev
    ```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
 ```
-app/
-├── leads/              # Lead management
-├── contacts/           # Contact management
-├── conversations/      # Chat interface
-└── api/               # API routes
-components/            # Reusable components
-prisma/               # Database schema and migrations
+src/
+├── app/              # Next.js app router pages
+├── components/       # Reusable React components
+├── types/           # TypeScript type definitions
+└── prisma/          # Database schema and migrations
 ```
 
-## API Routes
+## Contributing
 
-### Leads
-- `GET /api/leads` - List all leads
-- `POST /api/leads` - Create a new lead
-- `PATCH /api/leads/:id` - Update a lead
-- `POST /api/leads/:id/convert` - Convert lead to contact
-
-### Contacts
-- `GET /api/contacts` - List all contacts
-- `GET /api/contacts/:id` - Get contact details
-
-### Conversations
-- `GET /api/conversations/:id` - Get conversation messages
-- `POST /api/conversations/:id` - Add a new message
-
-## Development
-
-- Run tests: `npm test`
-- Build for production: `npm run build`
-- Start production server: `npm start`
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
